@@ -16,7 +16,6 @@ int main()
     for (int i = 0; i < 8; i++)
     {
         data[i] = buf[i + 5];
-        printf("%x ", data[i]);
     }
 
     // fuzzing対象のF*で開発した3つの関数

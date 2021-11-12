@@ -1,2 +1,2 @@
 all:
-	gcc -I $(KREMLIN_HOME)/include $(wildcard *.c) -o fuzzed
+	afl-gcc -I $(KREMLIN_HOME)/include $(wildcard *.c) -o fuzzed

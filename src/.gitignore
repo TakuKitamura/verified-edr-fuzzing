@@ -3,3 +3,6 @@
 
 # executable file
 fuzzed
+
+# generated testcases
+testcases

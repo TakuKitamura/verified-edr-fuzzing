@@ -14,11 +14,20 @@ int main()
     uint8_t can_dlc = buf[4];
     uint8_t data[8] = {0}; // bufのindex 5以降の8byteをスライス
     for (int i = 0; i < 8; i++)
+    {
         data[i] = buf[i + 5];
+        printf("%x ", data[i]);
+    }
 
     // fuzzing対象のF*で開発した3つの関数
-    parseDoor(can_id, can_dlc, data);
-    parseIndicator(can_id, can_dlc, data);
-    parseSpeed(can_id, can_dlc, data);
+    printf("id=%x, can_dlc=%x\n", can_id, can_dlc);
+    fstar_uint8 door = parseDoor(can_id, can_dlc, data);
+    printf("door=%x\n", door.value);
+    fstar_uint8 indicator = parseIndicator(can_id, can_dlc, data);
+    printf("indicator=%x\n", indicator.value);
+    fstar_uint16 speed = parseSpeed(can_id, can_dlc, data);
+    printf("speed=%x\n", speed.value);
+    
+
     return 0;
 }

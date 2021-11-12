@@ -13,8 +13,8 @@ int main()
     uint32_t can_id = buf[0] << 8 * 3 | buf[1] << 8 * 2 | buf[2] << 8 * 1 | buf[3]; // bufの先頭4byteをスライス
     uint8_t can_dlc = buf[4];
     uint8_t data[8] = {0}; // bufのindex 5以降の8byteをスライス
-    for (int i = 5; i < 13; i++)
-        data[i] = buf[i];
+    for (int i = 0; i < 8; i++)
+        data[i] = buf[i + 5];
 
     // fuzzing対象のF*で開発した3つの関数
     parseDoor(can_id, can_dlc, data);

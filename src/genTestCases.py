@@ -18,7 +18,7 @@ with open('seed/crash.log', mode='r') as f:
         can_dlc_hex_str = '{:02x}'.format(can_dlc)
         can_data_hex_str = can_data + ("0" * (8 * 2 - len(can_data)))
 
-        print("i={}, id={}, dlc={}, data={}".format(i,can_id_hex_str, can_dlc_hex_str, can_data_hex_str))
+        # print("i={}, id={}, dlc={}, data={}".format(i,can_id_hex_str, can_dlc_hex_str, can_data_hex_str))
         test_case_str = '{}{}{}'.format(can_id_hex_str, can_dlc_hex_str, can_data_hex_str)
 
         test_case_str_list = [ int(test_case_str[i*2:i*2+2], 16) for i in range(len(test_case_str) // 2) ]

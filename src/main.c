@@ -20,13 +20,9 @@ int main()
     }
 
     // fuzzing対象のF*で開発した3つの関数
-    printf("id=%x, can_dlc=%x\n", can_id, can_dlc);
     fstar_uint8 door = parseDoor(can_id, can_dlc, data);
-    printf("door=%x\n", door.value);
     fstar_uint8 indicator = parseIndicator(can_id, can_dlc, data);
-    printf("indicator=%x\n", indicator.value);
     fstar_uint16 speed = parseSpeed(can_id, can_dlc, data);
-    printf("speed=%x\n", speed.value);
     
 
     return 0;
